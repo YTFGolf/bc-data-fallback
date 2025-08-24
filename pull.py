@@ -34,7 +34,8 @@ def newfiles(args):
         {
             'path': 'DataLocal',
             'patterns': [
-                r'unitbuy.csv',
+                # r'unitbuy.csv',
+                r'stage.*\d\d\.csv'
             ]
         }
     ]
@@ -71,6 +72,6 @@ def newfiles(args):
         shutil.copyfile(src, dst)
 
     for files in new: copyfile(files)
-    for files in changed: copyfile(files)
+    # for files in changed: copyfile(files)
 
 newfiles(sys.argv)
