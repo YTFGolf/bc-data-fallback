@@ -24,18 +24,20 @@ class Folder(TypedDict):
 def newfiles(args):
     pull_from = os.path.expanduser(args[1])
 
+    # uncomment things as needed
     folders: list[Folder] = [
         {
             'path': 'ImageDataLocal',
             'patterns': [
-                r'\d{3}.*'
+                # r'\d{3}.*',
+                # # all unit animation files
             ]
         },
         {
             'path': 'DataLocal',
             'patterns': [
                 # r'unitbuy.csv',
-                r'stage.*\d\d\.csv'
+                # r'stage.*\d\d\.csv',
             ]
         }
     ]
