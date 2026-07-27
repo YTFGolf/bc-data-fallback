@@ -29,22 +29,22 @@ def newfiles(args):
         {
             'path': 'ImageDataLocal',
             'patterns': [
-                # r'\d{3}.*',
+                r'\d{3}.*',
                 # # all unit animation files
             ]
         },
         {
             'path': 'DataLocal',
             'patterns': [
-                # r'unitbuy.csv',
-                # r'stage.*\d\d\.csv',
+                r'unitbuy.csv',
+                r'stage.*\d\d\.csv',
             ]
         }
     ]
 
     Desc = NewType('Desc', tuple[str, str])
-    new: Desc = []
-    changed: Desc = []
+    new: list[Desc] = []
+    changed: list[Desc] = []
     for folder in folders:
         def folder_matches(name: str) -> bool:
             for pattern in folder['patterns']:
